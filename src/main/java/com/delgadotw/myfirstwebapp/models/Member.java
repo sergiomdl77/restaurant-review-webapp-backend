@@ -15,7 +15,7 @@ public class Member
     private String firstName;
     @Column(name = "LAST_NAME")
     private String lastName;
-    @Column(name = "BIRTH_DATE")
+    @Column(name = "BIRTHDATE")
     private String birthDate;
     @Column(name = "LOC_STATE")
     private String locState;
