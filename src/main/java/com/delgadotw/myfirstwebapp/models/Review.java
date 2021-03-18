@@ -15,7 +15,7 @@ public class Review
     @Column(name = "M_ID")
     private String memberId;
     @Column(name = "RV_DATE")
-    private String rvDate;
+    private java.sql.Date rvDate;
     @Column(name = "COMMENT")
     private String comment;
     @Column(name = "SCORE")
@@ -28,7 +28,7 @@ public class Review
         this.rvId = rvId;
         this.restaurantId = restaurantId;
         this.memberId = memberId;
-        this.rvDate = rvDate;
+        this.rvDate = java.sql.Date.valueOf(rvDate);
         this.comment = comment;
         this.score = score;
     }
@@ -57,12 +57,12 @@ public class Review
         this.memberId = memberId;
     }
 
-    public String getRvDate() {
+    public java.sql.Date getRvDate() {
         return rvDate;
     }
 
     public void setRvDate(String rvDate) {
-        this.rvDate = rvDate;
+        this.rvDate = java.sql.Date.valueOf(rvDate);
     }
 
     public String getComment() {
