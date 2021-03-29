@@ -12,28 +12,34 @@ public class Restaurant
     private long id;
     @Column(name = "NAME")
     private String name;
+    @Column(name = "LOC_CITY")
+    private String locCity;
     @Column(name = "LOC_STATE")
     private String locState;
     @Column(name = "LOC_ZIP_CODE")
     private String locZipCode;
     @Column(name = "AVG_SCORE")
     private float avgScore;
+    @Column(name = "REVIEW_COUNT")
+    private int reviewCount;
     @Column(name = "FOOD_TYPE")
     private String foodType;
     @Column(name = "AMBIANCE")
     private String ambiance;
     @Column(name = "PRICE_LEVEL")
-    private String priceLevel;
+    private int priceLevel;
 
     public Restaurant() {
     }
 
-    public Restaurant(long id, String name, String locState, String locZipCode, float avgScore, String foodType, String ambiance, String priceLevel) {
+    public Restaurant(long id, String name, String locCity, String locState, String locZipCode, float avgScore, int reviewCount, String foodType, String ambiance, int priceLevel) {
         this.id = id;
         this.name = name;
+        this.locCity = locCity;
         this.locState = locState;
         this.locZipCode = locZipCode;
         this.avgScore = avgScore;
+        this.reviewCount = reviewCount;
         this.foodType = foodType;
         this.ambiance = ambiance;
         this.priceLevel = priceLevel;
@@ -55,6 +61,14 @@ public class Restaurant
         this.name = name;
     }
 
+    public String getLocCity() {
+        return locCity;
+    }
+
+    public void setLocCity(String locCity) {
+        this.locCity = locCity;
+    }
+
     public String getLocState() {
         return locState;
     }
@@ -71,6 +85,13 @@ public class Restaurant
         this.avgScore = avgScore;
     }
 
+    public int getReviewCount() {
+        return reviewCount;
+    }
+
+    public void setReviewCount(int reviewCount) {
+        this.reviewCount = reviewCount;
+    }
     public String getLocZipCode() {
         return locZipCode;
     }
@@ -95,11 +116,11 @@ public class Restaurant
         this.ambiance = ambiance;
     }
 
-    public String getPriceLevel() {
+    public int getPriceLevel() {
         return priceLevel;
     }
 
-    public void setPriceLevel(String priceLevel) {
+    public void setPriceLevel(int priceLevel) {
         this.priceLevel = priceLevel;
     }
 }

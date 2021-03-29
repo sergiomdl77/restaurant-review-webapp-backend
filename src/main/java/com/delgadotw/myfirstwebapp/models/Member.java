@@ -17,6 +17,8 @@ public class Member
     private String lastName;
     @Column(name = "BIRTHDATE")
     private java.sql.Date birthDate;
+    @Column(name = "LOC_CITY")
+    private String locCity;
     @Column(name = "LOC_STATE")
     private String locState;
     @Column(name = "LOC_ZIP_CODE")
@@ -27,12 +29,13 @@ public class Member
     private String email;
 
 
-    public Member(String id, String password, String firstName, String lastName, String birthDate, String locState, String locZipCode, String gender, String email) {
+    public Member(String id, String password, String firstName, String lastName, String birthDate, String locCity, String locState, String locZipCode, String gender, String email) {
         this.id = id;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = java.sql.Date.valueOf(birthDate);
+        this.locCity = locCity;
         this.locState = locState;
         this.locZipCode = locZipCode;
         this.gender = gender;
@@ -84,6 +87,14 @@ public class Member
 
     public String getLocState() {
         return locState;
+    }
+
+    public String getLocCity() {
+        return locCity;
+    }
+
+    public void setLocCity(String locCity) {
+        this.locCity = locCity;
     }
 
     public void setLocState(String locState) {
