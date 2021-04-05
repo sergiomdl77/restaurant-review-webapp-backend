@@ -32,8 +32,9 @@ public class Restaurant
     public Restaurant() {
     }
 
-    public Restaurant(long id, String name, String locCity, String locState, String locZipCode, float avgScore, int reviewCount, String foodType, String ambiance, int priceLevel) {
-        this.id = id;
+    // The generated Id (id) must not be part of this constructor, because it won't be passed as
+    // an argument since it is automatically generated.
+    public Restaurant(String name, String locCity, String locState, String locZipCode, float avgScore, int reviewCount, String foodType, String ambiance, int priceLevel) {
         this.name = name;
         this.locCity = locCity;
         this.locState = locState;

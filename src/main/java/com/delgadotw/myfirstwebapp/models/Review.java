@@ -24,8 +24,9 @@ public class Review
     public Review() {
     }
 
-    public Review(long rvId, long restaurantId, String memberId, String rvDate, String comment, int score) {
-        this.rvId = rvId;
+    // The generated Id (rvId) must not be part of this constructor, because it won't be passed as
+    // an argument since it is automatically generated.
+    public Review(long restaurantId, String memberId, String rvDate, String comment, int score) {
         this.restaurantId = restaurantId;
         this.memberId = memberId;
         this.rvDate = java.sql.Date.valueOf(rvDate);
