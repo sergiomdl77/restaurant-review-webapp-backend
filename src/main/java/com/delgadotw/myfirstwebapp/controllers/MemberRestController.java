@@ -11,7 +11,16 @@ import java.util.List;
 /*
    Class that makes the connection between the client and the endpoint.
    It is in charge of mapping the client's requests to the appropriate
-   web services to expose the data from the Database.
+   web services to expose the data from the Database and then send the
+   appropriate response back to the client as a Response Entity. If
+   there is any data that needs to be sent back in the Response Entity
+   it will have the data (Member object or list of Member objects) packaged
+   in JSON format as the body of the response.
+
+   All of the methods in this class will be accessed by an Http Request
+   that contains the base URL for this app plus the "/api/member" path.
+   Whatever is left in the path will indicate this class which of this
+   methods/handlers will handle the http request.
  */
 
 @RestController
@@ -32,6 +41,8 @@ public class MemberRestController
         return new ResponseEntity<>(members, HttpStatus.OK);
     }
 
+    // Receives the id (as part of the mapping path) of the instance of the
+    // table/entity that we need to return.
     @GetMapping("/find/{id}")
     public ResponseEntity<Member> getMemberById(@PathVariable("id") String id)
     {

@@ -16,7 +16,7 @@ public class Member
     @Column(name = "LAST_NAME")
     private String lastName;
     @Column(name = "BIRTHDATE")
-    private java.sql.Date birthDate;
+    private String birthDate;
     @Column(name = "LOC_CITY")
     private String locCity;
     @Column(name = "LOC_STATE")
@@ -34,7 +34,7 @@ public class Member
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthDate = java.sql.Date.valueOf(birthDate);
+        this.birthDate = birthDate;
         this.locCity = locCity;
         this.locState = locState;
         this.locZipCode = locZipCode;
@@ -69,12 +69,12 @@ public class Member
         this.lastName = lastName;
     }
 
-    public java.sql.Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
     public void setBirthDate(String birthDate) {
-        this.birthDate = java.sql.Date.valueOf(birthDate);
+        this.birthDate = birthDate;
     }
 
     public String getPassword() {
