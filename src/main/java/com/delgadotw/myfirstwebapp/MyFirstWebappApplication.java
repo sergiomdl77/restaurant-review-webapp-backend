@@ -19,7 +19,7 @@ public class MyFirstWebappApplication {
 
 	// This Cors Filter is a bean for configuration that will tell this backend application (which is running in one
 	// domain/origin) to allow the frontend application (which is running in a different domain/origin) to access
-	// resources on this backend (which happens when we are running both frontend and backend locally for development).
+	// resources on this backend.
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
