@@ -1,6 +1,7 @@
 package com.delgadotw.myfirstwebapp.models;
 
 import javax.persistence.*;
+import java.lang.String;
 
 @Entity
 @Table(name = "REVIEW")
