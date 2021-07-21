@@ -24,9 +24,9 @@ public class MyFirstWebappApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200","*"));   // for development
-	//	corsConfiguration.setAllowedOrigins(Arrays.asList("https://restaurant-review-webapp-f-end.herokuapp.com",
-	//			"http://restaurant-review-webapp-f-end.herokuapp.com"));   // for production))
+	//	corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));   // for development
+		corsConfiguration.setAllowedOrigins(Arrays.asList("https://restaurant-review-webapp-f-end.herokuapp.com",
+				"http://restaurant-review-webapp-f-end.herokuapp.com","http://localhost:4200"));
 
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin", "Accept", "X-Requested-With",
