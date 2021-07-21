@@ -28,13 +28,18 @@ public class Restaurant
     private String ambiance;
     @Column(name = "PRICE_LEVEL")
     private int priceLevel;
+    @Column(name = "IMAGE_URL")
+    private String imageUrl;
+
+
 
     public Restaurant() {
     }
 
     // The generated Id (id) must not be part of this constructor, because it won't be passed as
     // an argument since it is automatically generated.
-    public Restaurant(String name, String locCity, String locState, String locZipCode, float avgScore, int reviewCount, String foodType, String ambiance, int priceLevel) {
+    public Restaurant(String name, String locCity, String locState, String locZipCode, float avgScore, int reviewCount,
+                      String foodType, String ambiance, int priceLevel, String imageUrl ) {
         this.name = name;
         this.locCity = locCity;
         this.locState = locState;
@@ -44,6 +49,7 @@ public class Restaurant
         this.foodType = foodType;
         this.ambiance = ambiance;
         this.priceLevel = priceLevel;
+        this.imageUrl = imageUrl;
     }
 
     public long getId() {
@@ -121,7 +127,9 @@ public class Restaurant
         return priceLevel;
     }
 
-    public void setPriceLevel(int priceLevel) {
-        this.priceLevel = priceLevel;
-    }
+    public void setPriceLevel(int priceLevel) { this.priceLevel = priceLevel; }
+
+    public String getImageUrl() {return imageUrl;  }
+
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }
