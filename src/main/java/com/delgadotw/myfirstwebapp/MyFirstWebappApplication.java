@@ -3,6 +3,7 @@ package com.delgadotw.myfirstwebapp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -12,6 +13,11 @@ import java.util.Arrays;
 // Entry point
 @SpringBootApplication
 public class MyFirstWebappApplication {
+
+	@GetMapping("/")
+	public String home(){
+		return "Welcome to my page";
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyFirstWebappApplication.class, args);
@@ -25,8 +31,12 @@ public class MyFirstWebappApplication {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
 	//	corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));   // for development
-		corsConfiguration.setAllowedOrigins(Arrays.asList("https://restaurant-review-webapp-f-end.herokuapp.com",
-				"http://restaurant-review-webapp-f-end.herokuapp.com","http://localhost:4200"));
+
+	// 	corsConfiguration.setAllowedOrigins(Arrays.asList("https://restaurant-review-webapp-f-end.herokuapp.com",
+	//			                                          "http://restaurant-review-webapp-f-end.herokuapp.com"));
+
+		corsConfiguration.setAllowedOrigins(Arrays.asList("https://restaurant-review-bucket.s3-website-us-east-1.amazonaws.com",
+				                                          "http://restaurant-review-bucket.s3-website-us-east-1.amazonaws.com"));
 
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin", "Accept", "X-Requested-With",
